@@ -25,12 +25,12 @@ The specific versions used in testing are indicated for all packages to ensure r
 
     git clone https://github.com/SilasAntonisen/PolySinger.git
     
-    cd  Polysinger/
+    cd PolySinger/
     ```
 3. **Move the lua script into the Synthesizer V scripts folder** 
     ```
     mv JapaneseNotes.lua ../scripts/
-
+    ```
 4. **Create a conda environment**
     ```
     conda create -n PolySinger python=3.8
@@ -123,4 +123,3 @@ If you use any of our code or the fine-tuned model, please cite our paper:
     note = {Available at: \url{https://arxiv.org/abs/2407.14399}}
 }
 ```
-
