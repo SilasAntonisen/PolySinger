@@ -42,6 +42,7 @@ The specific versions used in testing are indicated for all packages to ensure r
 6. **Install PyTorch and Transformers**
     ```
     conda install pytorch==1.13.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+    
     pip install transformers==4.45.1
     ```
 7. **Install dependencies for recording audio**
@@ -53,29 +54,29 @@ The specific versions used in testing are indicated for all packages to ensure r
     git clone https://github.com/schufo/lyrics-aligner.git
     ```
     
-9. **Copy CMU word2phoneme file into lyrics-aligner**
+9. **Copy CMU word2phoneme file into lyrics-aligner/files/ folder**
     ```
-    cd lyrics-aligner/files/
-
-    wget -P files https://github.com/hataori-p/lyrics-alignment/raw/main/lyrics-aligner/cmu_word2phonemes.pickle
+    wget -P lyrics-aligner/files/ https://github.com/hataori-p/lyrics-alignment/raw/main/lyrics-aligner/cmu_word2phonemes.pickle
     ```
     
 10. **Install the requirements for lyrics-aligner**
     ```
     pip install pyqt5==5.15.11
+    
     pip install ffmpeg==1.4
+    
     pip install pysoundfile==0.9.0.post1
+    
     pip install argparse==1.4.0
     ```
 11. **Install Omnizart and its checkpoints**
-
-    **Note:** *You might need to  first install these system packages:*
     ```
-    sudo apt-get install libsndfile-dev fluidsynth ffmpeg
-    ```
-    ```
+    sudo apt-get install libsndfile1-dev=1.0.31-2ubuntu0.1 fluidsynth=2.2.5-1 ffmpeg=7:4.4.2-0ubuntu0.22.04.1
+    
     pip install Cython==3.0.11
+    
     pip install omnizart==0.5.0
+    
     omnizart download-checkpoints
     ```
 
@@ -86,11 +87,19 @@ The specific versions used in testing are indicated for all packages to ensure r
 13. **Install dependencies for Japanese pronunciation and word segmentation**
     ```
     pip install pykakasi==2.3.0
+    
     pip install nagisa==0.2.11
     ```
 14. **Retrieve the fine-tuned model**
 
-    Copy the [model](https://drive.google.com/drive/folders/1pwR2pVY1YlK1ncBn5ZYUEo5aD1dCkCrP?usp=sharing) folder into this repository. This is our fine-tuned NLLB (No Language Left Behind) model
+    Manually copy the [model](https://drive.google.com/drive/folders/1pwR2pVY1YlK1ncBn5ZYUEo5aD1dCkCrP?usp=sharing) folder into this repository. This is our fine-tuned NLLB (No Language Left Behind) model
+
+    **or**
+    ```
+    pip install gdown
+
+    gdown --folder https://drive.google.com/drive/folders/1OxgFNw4taIShd1sfuVyRSOYNesW9iRdY
+    ```
 
 ## Usage
 Now the environment is set up. To run this implementation, follow these steps:
@@ -99,15 +108,17 @@ Now the environment is set up. To run this implementation, follow these steps:
     ```
     python lyricsTranscriber.py
     ```
+    **Note**: *Remember to choose your prefered microophone inside your system setting.*
+
     **Note**: *When using the baseline vocal-contour model in Omnizart, the tail of the audio will occasionally not be transcribed. This can be mitigated by extending the tail with a hum or similar sound that will not be transcribed as lyrics.*
 
-2. **Run** `nllb.py` **from within this repository** to translate the lyrics to Japanese and define the pronunciation of the Japanese lyrics
+3. **Run** `nllb.py` **from within this repository** to translate the lyrics to Japanese and define the pronunciation of the Japanese lyrics
     ```
     python nllb.py
     ```
     **Note**: *You can choose whether you want to use the baseline or fine-tuned model in the script. Depending on your pc memory, you might need to change the num_beams parameter as well.*
 
-3. **Run** `JapaneseNotes.lua` **in Synthesizer V Studio Pro** to create notes and automation
+4. **Run** `JapaneseNotes.lua` **in Synthesizer V Studio Pro** to create notes and automation
     - Launch Synthesizer V Studio Pro.
     - Click the **Scripts** dropdown menu and select `PolySinger -> JapaneseNotes` to generate the notes.
     - Select a synthetic voice for the current track in the voice menu (Mai is included when purchasing a Synthesizer V Studio Pro license but must be installed separately) and press play!
