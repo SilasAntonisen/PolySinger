@@ -216,11 +216,11 @@ function next(groupName)
   project:getTrack(1):addGroupReference(newGroupReference)
 
   -- Read phonemes and their alignments.
-  local text, timings = parse_phoneme_file("GitRepo/lyrics-aligner/outputs/cmu/phoneme_onsets/recording.txt")
+  local text, timings = parse_phoneme_file("PolySinger/lyrics-aligner/outputs/cmu/phoneme_onsets/recording.txt")
   -- Group phonemes into words.
   local words, words_onsets, words_durs = group_phonemes_into_words(text, timings)
   -- Read the syllables for all words.
-  local syllables = parse_syllables_file("GitRepo/files/syllables.csv")
+  local syllables = parse_syllables_file("PolySinger/files/syllables.csv")
   -- Align syllables with the phonemes to obtain syllable level onset and duration alignments
   syllables = match_syllables_with_phonemes(syllables, words, words_onsets, words_durs)
   -- Adjust durations of syllables for to fill out gaps and ensure better flow.
@@ -236,7 +236,7 @@ function onNextFrame(syllables)
   local timeAxis, AutomatePitch = project:getTimeAxis(), newGroup:getParameter("PitchDelta")
 
   -- Read the Japanese lyrics.
-  local jp_lyrics = parse_csv("GitRepo/files/jp_lyrics.csv")
+  local jp_lyrics = parse_csv("PolySinger/files/jp_lyrics.csv")
   -- Counter for keeping track mora index.
   local lyric_count = 0
 
@@ -271,7 +271,7 @@ function onNextFrame(syllables)
   end
 
   -- Automate the pitch of notes over time as a deviation from 60.
-  for time, f0 in pairs(parse_pitch_file("GitRepo/files/recording_f0.csv")) do
+  for time, f0 in pairs(parse_pitch_file("PolySinger/files/recording_f0.csv")) do
     local blick = timeAxis:getBlickFromSeconds(time)
     -- the deviation is multiplied by 100 for normalization. 1200 cents is added to shift up an octave, but this might not be neccesarry in your case.
     local value = ((f0 - 60) * 100) + 1200
