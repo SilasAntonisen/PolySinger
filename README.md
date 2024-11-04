@@ -126,11 +126,13 @@ Now the environment is set up. To run this implementation, follow these steps:
 ## Citation
 If you use any of our code or the fine-tuned model, please cite our paper:
 ```bibtex
-@article{Antonisen2024PolySinger,
-    author = {Antonisen, Silas and López-Espejo, Iván},
-    title = {PolySinger: Singing-Voice to Singing-Voice Translation from English to Japanese},
-    journal = {arXiv preprint arXiv:2407.14399},
-    year = {2024},
-    note = {Available at: \url{https://arxiv.org/abs/2407.14399}}
-}
+@inproceedings{PolySinger,
+        author       = {Silas Antonisen and Iván López Espejo},
+        title        = {PolySinger: Singing-Voice to Singing-Voice Translation From English to Japanese},
+        booktitle    = {{Proceedings of the 25th International Society for Music Information Retrieval Conference}},
+        publisher    = {ISMIR},
+        year         = 2024,
+        month        = November,
+        venue        = {San Francisco, USA},
+      }
 ```
