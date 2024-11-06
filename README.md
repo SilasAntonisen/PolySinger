@@ -108,7 +108,7 @@ Now the environment is set up. To run this implementation, follow these steps:
     ```
     python lyricsTranscriber.py
     ```
-    **Note**: *Remember to choose your prefered microophone inside your system setting.*
+    **Note**: *Remember to choose your preferred microphone inside your system settings.*
 
     **Note**: *When using the baseline vocal-contour model in Omnizart, the tail of the audio will occasionally not be transcribed. This can be mitigated by extending the tail with a hum or similar sound that will not be transcribed as lyrics.*
 
@@ -116,7 +116,7 @@ Now the environment is set up. To run this implementation, follow these steps:
     ```
     python nllb.py
     ```
-    **Note**: *You can choose whether you want to use the baseline or fine-tuned model in the script. Depending on your pc memory, you might need to change the num_beams parameter as well.*
+    **Note**: *You can choose whether you want to use the baseline or fine-tuned model in the script. Depending on your pc memory and audio length, you might need to change the num_beams parameter as well.*
 
 4. **Run** `JapaneseNotes.lua` **in Synthesizer V Studio Pro** to create notes and automation
     - Launch Synthesizer V Studio Pro.
@@ -126,13 +126,11 @@ Now the environment is set up. To run this implementation, follow these steps:
 ## Citation
 If you use any of our code or the fine-tuned model, please cite our paper:
 ```bibtex
-@inproceedings{PolySinger,
-        author       = {Silas Antonisen and Iván López Espejo},
-        title        = {PolySinger: Singing-Voice to Singing-Voice Translation From English to Japanese},
-        booktitle    = {{Proceedings of the 25th International Society for Music Information Retrieval Conference}},
-        publisher    = {ISMIR},
-        year         = 2024,
-        month        = November,
-        venue        = {San Francisco, USA},
-      }
+@INPROCEEDINGS{PolySinger,
+    AUTHOR = {Silas Antonisen and Iván López-Espejo},
+    TITLE = {{PolySinger: Singing-Voice to Singing-Voice Translation from English to Japanese}},
+    BOOKTITLE = {Proceedings of the 25th International Society for Music Information Retrieval (ISMIR) Conference},
+    YEAR = {2024},
+    ADDRESS = {San Francisco, CA, USA}
+    }
 ```
