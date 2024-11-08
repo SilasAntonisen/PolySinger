@@ -1,12 +1,13 @@
 # PolySinger: Singing-Voice to Singing-Voice Translation from English to Japanese
 [![arXiv](https://img.shields.io/badge/arXiv-2407.14399-b31b1b.svg)](https://arxiv.org/abs/2407.14399)
+[![Project Page](https://img.shields.io/badge/Project%20Page-Access%20Here-green.svg)](https://antonisen.dev/polysinger/)
 [![Synthesizer V Studio Pro](https://img.shields.io/badge/Synthesizer%20V%20Studio%20Pro-Required-red.svg)](https://dreamtonics.com/synthesizerv/)
 ![Platform](https://img.shields.io/badge/Platform-Ubuntu-orange.svg)
 ![Python Version](https://img.shields.io/badge/python-3.8-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![GitHub Issues](https://img.shields.io/github/issues/SilasAntonisen/PolySinger)
 
-This is the implementation for the paper ["PolySinger: Singing-Voice to Singing-Voice Translation from English to Japanese"](https://arxiv.org/abs/2407.14399) by Silas Antonisen and Iván López-Espejo. The concept is similar to speech-to-speech translation, but for singing! In short, the idea is to sing a song, translate the lyrics, and resynthesize the song with a synthetic voice in the translated language using your original melody.
+This is the implementation for the paper ["PolySinger: Singing-Voice to Singing-Voice Translation from English to Japanese"](https://arxiv.org/abs/2407.14399) by Silas Antonisen and Iván López-Espejo. The concept is similar to speech-to-speech translation, but for singing! In short, the idea is to sing a song, translate the lyrics, and resynthesize the song with a synthetic voice in the translated language using your original melody. The project page with audio examples can be found [here](https://antonisen.dev/polysinger/).
 
 ## Prerequisites
 Currently, this implementation requires a license for [Synthesizer V Studio Pro](https://dreamtonics.com/synthesizerv/).
